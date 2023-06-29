@@ -2,9 +2,9 @@
   "name": "backend",
   "version": "1.0.0",
   "description": "Api Rest para un Manga page",
-  "main": "index.js",
+  "main": "app.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon ./src/app.ts"
   },
   "keywords": [
     "Typescript",
