@@ -1,4 +1,6 @@
 import  express,{Request, Response}  from "express";
+import main from "./routes";
+
 
 const app = express();
 //http://localhost:3000
@@ -12,6 +14,8 @@ app.get('/home',(req: Request, res: Response)=>{
     console.log(namePage);
     res.send(`<h1>${namePage}</h1>`)
 } )
+app.use('/', main )
+
 app.listen(3000, ()=>{
     console.log('servidor lanzado en el puerto 3000');
 });
