@@ -4,6 +4,7 @@ import main from "./routes";
 
 
 const app = express();
+const PORT = process.env.PORT || 3001;
 //http://localhost:3000
 app.get('/', (req: Request, res: Response)=>{
 const mensaje = 'Bienvenido a la API de manga page';
@@ -17,6 +18,6 @@ app.get('/home',(req: Request, res: Response)=>{
 } )
 app.use('/api', main )
 
-app.listen(3000, ()=>{
-    console.log('servidor lanzado en el puerto 3000');
+app.listen(PORT, ()=>{
+    console.log(`Servidor en http://localhost: ${PORT}`);
 });
