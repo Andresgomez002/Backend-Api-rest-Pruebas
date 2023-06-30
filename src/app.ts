@@ -1,3 +1,4 @@
+// import 'dotenv/config';
 import  express,{Request, Response}  from "express";
 import main from "./routes/index.route";
 import db from "./config/mongo.config";
@@ -19,9 +20,9 @@ app.get('/home',(req: Request, res: Response)=>{
 } )
 app.use('/api', main )
 
-// db() 
-//     .then(()=>console.log('MongoDB se conecto correcto'))
-    // .catch(()=>console.log('MongoDB sufre un problema de conexion'))
+db() 
+    .then(()=>console.log('MongoDB se conecto correcto'))
+    .catch(()=>console.log('MongoDB sufre un problema de conexion'))
 app.listen(PORT, ()=>{
     console.log(`Servidor en http://localhost: ${PORT}`);
 });
