@@ -1,5 +1,5 @@
 import  express,{Request, Response}  from "express";
-import main from "./routes";
+import main from "./routes/index.route";
 import db from "./config/mongo.config";
 
 

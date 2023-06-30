@@ -1,7 +1,7 @@
 //archivo central de enrutamiento
 import { Router, Request, Response } from "express";
 import routerUsers from "./users";
-import routerProduts from "./products"
+import routerProduts from "./products.route"
 
 const router = Router();
 
