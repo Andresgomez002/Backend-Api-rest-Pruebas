@@ -1,4 +1,6 @@
 import { Request, Response } from "express";
+import productModel from "../models/products.model";
+import ProductModel from "../models/products.model";
 async function getProducts( req: Request, res:Response){
       console.log('Obtengo todos los productos');    
       res.send('Obtengo todos los productos');
@@ -8,8 +10,9 @@ async function getproduct( req: Request, res:Response){
       res.send('Obtiene un producto por id');
 }
 async function createProduct( req: Request, res:Response){
-      console.log('Crea un producto');  
-      res.send('Crea un producto');  
+    const data = req.body;
+    const response = await ProductModel.create(data);
+    res.json(response);
 }
 async function updateProduct( req: Request, res:Response){
       console.log('Actualiza un producto por id');   

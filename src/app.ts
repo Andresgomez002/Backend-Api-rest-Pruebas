@@ -6,7 +6,7 @@ import db from "./config/mongo.config";
 
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 //http://localhost:3000
 app.get('/', (req: Request, res: Response)=>{
 const mensaje = 'Bienvenido a la API de manga page';
@@ -18,6 +18,7 @@ app.get('/home',(req: Request, res: Response)=>{
     console.log(namePage);
     res.send(`<h1>${namePage}</h1>`)
 } )
+app.use(express.json())
 app.use('/api', main )
 
 db() 
