@@ -1,4 +1,4 @@
-// import 'dotenv/config';
+import 'dotenv/config';
 import  express,{Request, Response}  from "express";
 import main from "./routes/index.route";
 import db from "./config/mongo.config";
@@ -6,7 +6,9 @@ import db from "./config/mongo.config";
 
 
 const app = express();
-const PORT = process.env.PORT || 3002;
+const PORT = 3011;
+
+
 //http://localhost:3000
 app.get('/', (req: Request, res: Response)=>{
 const mensaje = 'Bienvenido a la API de manga page';
