@@ -5,12 +5,30 @@ const productSchema = new Schema(
         type: String,
         required: true
     },
-    price:{
-        type: Number,
-        required: false
-    },
     description:{
         type: String
+    },
+    
+    image:{
+            type: String,
+            required: true
+        
+    },
+    pubicationDate:{
+        type: Date,
+        default: new Date
+    },
+    pages:{
+        type: Number,
+        required: true
+    },
+    category:{
+     type: String,
+     required: true
+    },
+    ranking:{
+        type: Number,
+        required: true
     }
     },
     {

@@ -1,6 +1,9 @@
 export interface Product {
     name: string;
-    price: number;
     descripcion: string;
-    
+    image: string;
+    publicationDate: Date;
+    pages: number;
+    category: string;
+    ranking: number;
 }
