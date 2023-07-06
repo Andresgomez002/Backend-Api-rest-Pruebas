@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import { getAllProducts, getProductById, insertProduct } from "../services/product.service";
+import { getAllProducts, getProductById, insertProduct, removeProductById } from "../services/product.service";
 async function getProducts( req: Request, res:Response){
       try{
             const 
@@ -45,8 +45,17 @@ async function updateProduct( req: Request, res:Response){
       res.send('Actualiza un producto por id') 
 }
 async function deleteProduct( req: Request, res:Response){
-      console.log('Elimina un producto por id');    
-      res.send('Elimina un producto por id');
+      const productId = req.params.id;
+      try {
+         const  response  = await removeProductById(productId)
+         console.log(response);
+         res.json(response)    
+      } catch (error) {
+            console.log(`Error en la eliminacion del producto con id ${productId}`);
+            res.json({
+                 msg: 'ERROR_DELETE_PRODUCT'
+            });
+      }
 }
 
 export{

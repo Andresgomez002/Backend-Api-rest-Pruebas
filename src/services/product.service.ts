@@ -11,8 +11,12 @@ const getAllProducts = async ()=>{
 const getProductById = async (productId: string) =>{
    return await ProductModel.findOne({ _id: productId});
 }
+const removeProductById = async (productId: string)=>{
+ return await ProductModel.findOneAndRemove({ _id: productId})
+}
 export{
     insertProduct,
     getAllProducts,
-    getProductById
+    getProductById,
+    removeProductById
 }
