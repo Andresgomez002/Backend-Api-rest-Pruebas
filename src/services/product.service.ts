@@ -8,7 +8,11 @@ const insertProduct = async (product: Product) => {
 const getAllProducts = async ()=>{
    return await ProductModel.find({});
 }
+const getProductById = async (productId: string) =>{
+   return await ProductModel.findOne({ _id: productId});
+}
 export{
     insertProduct,
-    getAllProducts
+    getAllProducts,
+    getProductById
 }

@@ -5,7 +5,7 @@ import { createProduct, deleteProduct, getProducts, getproduct, updateProduct } 
 const router = Router();
 //http://localhost:3000/api/products/
 router.get('/', getProducts );
-router.get('/', getproduct);
+router.get('/:id', getproduct);
 router.post('/', createProduct);
 router.put('/', updateProduct);
 router.delete('/', deleteProduct);
