@@ -5,6 +5,10 @@ const insertProduct = async (product: Product) => {
     const response = await ProductModel.create(product);
     return response;
 }
+const getAllProducts = async ()=>{
+   return await ProductModel.find({});
+}
 export{
-    insertProduct
+    insertProduct,
+    getAllProducts
 }
