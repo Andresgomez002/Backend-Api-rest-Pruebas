@@ -9,6 +9,14 @@ const authSchema = new Schema(
             type: String,
             require: true,
             default: 'registered'
+        },
+        email:{
+            type: String,
+            required: true
+        },
+        password:{
+            type: String,
+            required: true
         }
     },
     {
