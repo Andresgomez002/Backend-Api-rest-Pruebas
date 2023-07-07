@@ -8,6 +8,7 @@ const authSchema = new Schema(
         rol:{
             type: String,
             require: true,
+            unique: true,
             default: 'registered'
         },
         email:{
